@@ -22,7 +22,7 @@ int main(void)
     if(first_cpid == 0){
         printf("Running child process PID: %d\n", getpid());
 
-        execle("./echoall", "echoall", "Bandicoot", "Pacman", NULL, custom_env);
+        execle("echoall", "echoall", "Bandicoot", "Pacman", NULL, custom_env);
         perror("execle"); // Exec failed, display error
         exit(1);
     }
@@ -34,7 +34,7 @@ int main(void)
         if (second_cpid == 0) {
             printf("Running child process PID: %d\n", getpid());
             
-            execlp("./echoall", "echoall", "Spyro", NULL);
+            execlp("echoall", "echoall", "Spyro", NULL);
             perror("execlp"); // Exec failed, display error
             exit(1);
         } 
